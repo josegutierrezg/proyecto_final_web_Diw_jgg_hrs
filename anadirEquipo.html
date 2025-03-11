@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noticias de la Liga</title>
+    <link rel="stylesheet" href="css/anadirEquipo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="menu_principal.html">
+                <img src="img/Firefly_Logo_de_futbol_9009.png" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="partidos.html">Partidos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="noticias.html">Noticias</a></li>
+                    <li class="nav-item"><a class="nav-link" href="acercade.html">Acerca de</a></li>
+                    <li class="nav-item"><a class="btn btn-add" href="codigoEquipo.html">Añadir Equipo</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="add-team-section">
+            <div class="container">
+                <div class="team-card">
+                    <h2 class="text-center text-bg-dark">Añadir Equipo</h2>
+                    <form id="team-form" action="menu_principal.html" novalidate>
+                        <div class="mb-3">
+                            <label class="form-label" for="team-image">Imagen del equipo</label>
+                            <input type="file" class="form-control" id="team-image" accept="image/*" required>
+                            <div class="invalid-feedback">Por favor, seleccione una imagen.</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label" for="team-name">Nombre del equipo</label>
+                            <input type="text" class="form-control" id="team-name" placeholder="Ingrese el nombre del equipo" required>
+                            <div class="invalid-feedback">El nombre del equipo es obligatorio.</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label" for="team-size">Número de integrantes</label>
+                            <select class="form-control" id="team-size" required>
+                                <option value="">Seleccione...</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                            </select>
+                            <div class="invalid-feedback">Seleccione el número de integrantes.</div>
+                        </div>
+
+                        <div id="players-container"></div>
+
+                        <div class="mb-3">
+                            <label class="form-label" for="team-description">Descripción del equipo</label>
+                            <textarea class="form-control" id="team-description" rows="3" placeholder="Describe el equipo" required></textarea>
+                            <div class="invalid-feedback">La descripción del equipo es obligatoria.</div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Crear</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer bg-dark text-white py-4">
+        <div class="container text-center">
+            <p>&copy; 2025 Todos los derechos reservados</p>
+            <div class="social-icons">
+                <a href="#" class="text-white mx-2"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="text-white mx-2"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="text-white mx-2"><i class="bi bi-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("team-size").addEventListener("change", function () {
+            let container = document.getElementById("players-container");
+            container.innerHTML = ""; // Limpiar inputs previos
+
+            let teamSize = parseInt(this.value);
+            if (!isNaN(teamSize) && teamSize >= 3 && teamSize <= 8) {
+                for (let i = 1; i <= teamSize; i++) {
+                    let div = document.createElement("div");
+                    div.classList.add("mb-3");
+                    div.innerHTML = `
+                        <label class="form-label" for="player${i}">Integrante ${i}</label>
+                        <input type="text" class="form-control" id="player${i}" placeholder="Nombre del integrante ${i}" required>
+                        <div class="invalid-feedback">El nombre del integrante ${i} es obligatorio.</div>
+                    `;
+                    container.appendChild(div);
+                }
+            }
+        });
+
+        // Validación del formulario
+        const form = document.getElementById("team-form");
+        form.addEventListener("submit", function (event) {
+            let isValid = true;
+
+            // Validar cada campo
+            const fields = form.querySelectorAll("input, select, textarea");
+            fields.forEach(function (field) {
+                if (!field.checkValidity()) {
+                    isValid = false;
+                    field.classList.add("is-invalid");
+                } else {
+                    field.classList.remove("is-invalid");
+                    field.classList.add("is-valid");
+                }
+            });
+
+            // Si el formulario no es válido, evitar el envío
+            if (!isValid) {
+                event.preventDefault();
+            }
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.js"></script>
+</body>
+
+</html>

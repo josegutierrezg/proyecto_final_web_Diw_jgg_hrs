@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/register.css">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <!-- Logo -->
+            <a class="navbar-brand" href="login.html">
+                <img src="img/Firefly_Logo_de_futbol_9009.png" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+    <main class="main-content">
+        <form action="menu_principal.html" class="needs-validation" novalidate>
+            <div class="row">
+                <div class="col p-5">
+                    <h3 class="bg-dark p-2 text-center text-light rounded mb-4">
+                        Registrate <i class="bi bi-people ms-2"></i></h3>
+                    <label for="user" class="form-label text-light">Nombre de usuario</label>
+                    <input type="text" id="user" class="form-control" placeholder="Escribe nombre usuario" required>
+                    <div class="invalid-feedback">
+                        Usuario incorrecto
+                    </div>
+                    <label for="email" class="form-label mt-3 text-light">Email</label>
+                    <input type="email" id="email" class="form-control" placeholder="Escribe email" required>
+                    <div class="invalid-feedback">
+                        Email incorrecto
+                    </div>
+                    <label for="password" class="form-label mt-3 text-light">Contraseña</label>
+                    <input type="password" id="password" class="form-control" placeholder="Escribe contraseña" required>
+                    <div class="invalid-feedback">
+                        Contraseña incorrecta
+                    </div>
+
+                    <button type="submit" class="btn btn-primary mt-3 text-light">Crear cuenta <i
+                            class="bi bi-arrow-up-right ms-2"></i></button>
+                </div>
+            </div>
+        </form>
+    </main>
+    <!-- Footer -->
+    <footer class="footer bg-dark text-white py-4">
+        <div class="container text-center">
+            <p>&copy; 2025 Todos los derechos reservados</p>
+            <div class="social-icons">
+                <a href="#" class="text-white mx-2">
+                    <i class="bi bi-facebook"></i>
+                </a>
+                <a href="#" class="text-white mx-2">
+                    <i class="bi bi-twitter"></i>
+                </a>
+                <a href="#" class="text-white mx-2">
+                    <i class="bi bi-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/bs5-validation.js"></script>
+
+</body>
+
+</html>

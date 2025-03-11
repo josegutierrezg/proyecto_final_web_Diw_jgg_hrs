@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <!-- Logo -->
+            <a class="navbar-brand" href="#">
+                <img src="img/Firefly_Logo_de_futbol_9009.png" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+    
+    <!-- Formulario de login con estilo personalizado -->
+    <main class="main-content">
+        <form action="menu_principal.html" class="needs-validation" novalidate>
+            <div class="row">
+                <div class="col p-5">
+                    <h3 class="bg-dark p-2 text-center text-light rounded mb-4">
+                        Inicia sesión <i class="bi bi-people ms-2"></i>
+                    </h3>
+                    <!-- Campo de email -->
+                    <label for="email" class="form-label text-light">Email</label>
+                    <input type="email" id="email" class="form-control custom-input" placeholder="Escribe tu email" required>
+                    <div class="invalid-feedback">Email incorrecto</div>
+                    
+                    <!-- Campo de contraseña -->
+                    <label for="password" class="form-label text-light mt-3">Contraseña</label>
+                    <input type="password" id="password" class="form-control custom-input" placeholder="Escribe tu contraseña" required>
+                    <div class="invalid-feedback">Contraseña incorrecta</div>
+
+                    <!-- Checkbox "Recordarme" -->
+                    <div class="form-check mt-3">
+                        <label for="check-remember" class="form-check-label text-light">Recuérdame</label>
+                        <input type="checkbox" name="remember" id="check-remember" class="form-check-input">
+                    </div>
+
+                    <!-- Botón de inicio de sesión -->
+                    <button type="submit" class="btn btn-info mt-3 text-light custom-btn">
+                        Inicia sesión <i class="bi bi-arrow-up-right ms-2"></i>
+                    </button>
+                    
+                    <!-- Enlace a registro -->
+                    <button type="button" class="btn btn-link mt-3 ms-1 text-info">
+                        <a href="register.html" class="text-light">¿No tienes una cuenta? Registrate</a>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-white py-4">
+        <div class="container text-center">
+            <p>&copy; 2025 Todos los derechos reservados</p>
+            <div class="social-icons">
+                <a href="#" class="text-white mx-2">
+                    <i class="bi bi-facebook"></i>
+                </a>
+                <a href="#" class="text-white mx-2">
+                    <i class="bi bi-twitter"></i>
+                </a>
+                <a href="#" class="text-white mx-2">
+                    <i class="bi bi-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/bs5-validation.js"></script>
+</body>
+
+</html>
