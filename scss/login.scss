@@ -1,7 +1,5 @@
 @use 'sass:color';
-@use "../node_modules/bootstrap/scss/bootstrap" as bootstrap with (
-  $primary: $primary,
-);
+
 $primary: #1c9b60;
 $secondary: #ffcc00;
 $navbar-background: #343a40;
